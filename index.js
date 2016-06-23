@@ -24,6 +24,18 @@ var api = new ParseServer({
       senderId: e.ANDROID_SENDER_ID,
       apiKey: e.ANDROID_API_KEY
     },
+    ios: [
+      {
+        pfx: __dirname + '/config/' + e.IOS_PFX_DEV,
+        bundleId: e.IOS_BUNDLE_ID_DEV,
+        production: false
+      },
+      {
+        pfx: __dirname + '/config/' + e.IOS_PFX_PRO,
+        bundleId: e.IOS_BUNDLE_ID_PRO,
+        production: true
+      }
+    ]
   }
 });
 var app = express();
