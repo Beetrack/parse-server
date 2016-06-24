@@ -4,13 +4,13 @@ var path = require('path');
 var yaml = require('js-yaml');
 var fs = require("fs");
 var e = yaml.load(fs.readFileSync(__dirname + "/config/app.yaml"));
-
-console.log(e.DATABASE_URI);
+var rollbar = require('rollbar');
+rollbar.init(e.ROLLBAR_TOKEN);
 
 var databaseUri = e.DATABASE_URI;
 
 if (!databaseUri) {
-  console.log('DATABASE_URI not specified, falling back to localhost.');
+  rollbar.reportMessage('DATABASE_URI not specified, falling back to localhost.');
 }
 
 var api = new ParseServer({
@@ -41,6 +41,7 @@ var api = new ParseServer({
   }
 });
 var app = express();
+app.use(rollbar.errorHandler(e.ROLLBAR_TOKEN));
 
 var mountPath = e.PARSE_MOUNT;
 app.use(mountPath, api);
