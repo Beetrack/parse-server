@@ -2,3 +2,4 @@ node_modules
 config/app.yaml
 *.log
 logs/
+*.p12
