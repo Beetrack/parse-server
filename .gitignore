@@ -1,5 +1,4 @@
 node_modules
 config/app.yaml
-*.p12
 *.log
 logs/

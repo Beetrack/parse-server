@@ -28,11 +28,13 @@ var api = new ParseServer({
       {
         pfx: __dirname + '/config/' + e.IOS_PFX_DEV,
         bundleId: e.IOS_BUNDLE_ID_DEV,
+        passphrase: e.IOS_CERT_PASS,
         production: false
       },
       {
         pfx: __dirname + '/config/' + e.IOS_PFX_PRO,
         bundleId: e.IOS_BUNDLE_ID_PRO,
+        passphrase: e.IOS_CERT_PASS,
         production: true
       }
     ]
