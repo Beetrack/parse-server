@@ -6,7 +6,7 @@
 > In summer 2012 Debian maintainers decided to rename Node.js executable to prevent some kind of namespace collision with another package. It was very hard decision for Debian Technical Committee, because it breaks backward compatibility.
 
 ## Install npm package
-`sudo apt-get install nodejs-legacy`
+`sudo apt-get install npm`
 
 ## Install Essential Packages
 `sudo npm install`
