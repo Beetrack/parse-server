@@ -49,5 +49,5 @@ app.use(mountPath, api);
 var port = e.PORT;
 var httpServer = require('http').createServer(app);
 httpServer.listen(port, function() {
-    console.log('parse-server-example running on port ' + port + '.');
+    console.log('parse-server running on port ' + port + '.');
 });
